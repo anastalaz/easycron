@@ -20,6 +20,7 @@ package main
 
 import (
     "fmt"
+	"net/url"
 
     "github.com/anastalaz/easycron"
 )
@@ -32,8 +33,8 @@ func main() {
 	v.Set("size", "1")
 	myCronJobs, err := client.List(v) // If no optional parameters pass nil
 	if err != nil {
-	    fmt.Println(err)
-	    return
+		fmt.Println(err)
+		return
 	}
 	fmt.Println(myCronJobs)
 }
