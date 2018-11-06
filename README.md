@@ -15,14 +15,14 @@ $ go get github.com/anastalaz/easycron
 
 ## Example
 
-```
+```go
 package main
 
 import (
-    "fmt"
+	"fmt"
 	"net/url"
 
-    "github.com/anastalaz/easycron"
+	"github.com/anastalaz/easycron"
 )
 
 func main() {
@@ -31,11 +31,13 @@ func main() {
 	// Get list of all cronjobs
 	v := url.Values{}
 	v.Set("size", "1")
+
 	myCronJobs, err := client.List(v) // If no optional parameters pass nil
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	
 	fmt.Println(myCronJobs)
 }
 ```
